@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: "http://ganeshkp977-001-site1.ftempurl.com/api/"
+  baseUrl: "https://cors-everywhere.herokuapp.com/http://ganeshkp977-001-site1.ftempurl.com/api/"
 };
 /*
  * For easier debugging in development mode, you can import the following file
