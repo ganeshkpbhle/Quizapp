@@ -54,6 +54,9 @@ export class UserComponent implements OnInit {
         Score += 1;
       }
     });
+    if(parseInt(data.Time_spent.slice(0,2))<0){
+      data.Time_spent="00 : 00";
+    }
     let temp: Attempt_Data = { Date: new Date().toISOString().slice(0, 19), UId: this.userId, Score: Score, TimeSpent: 60 - ((parseInt(data.Time_spent.slice(0, 2)) * 60) + parseInt(data.Time_spent.slice(5, 8))) }
     this.apiserve.PostAttempt(temp)
       .subscribe(() => {

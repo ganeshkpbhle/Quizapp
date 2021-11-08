@@ -27,8 +27,9 @@ export class QuesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.index=0;
     this.ques_data.forEach((item) => {
-      this.answers.push({ Qn: item.qn, QnId: item.qnId, ImageName: item.imageName, selected: -1 });
+      this.answers.push({ Qn: item.qn, QnId: item.qnId, ImageName: item.imageName, selected:-1 });
     });
     this.target_Time.setMinutes(new Date().getMinutes() + 1);
     this.Timer();

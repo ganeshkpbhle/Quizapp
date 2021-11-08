@@ -18,18 +18,22 @@
                 </div>
                 <ul class="list-group">
                     <form [formGroup]="form">
-                        <div *ngIf="ques_data[index].option1!=null">
-                            <li class="list-group-item"><input type="radio" formControlName="Option" value=0>&emsp;{{ques_data[index].option1}}</li>
-                        </div>
-                        <div *ngIf="ques_data[index].option2!=null">
-                            <li class="list-group-item"><input type="radio" formControlName="Option" value=1>&emsp;{{ques_data[index].option2}}</li>
-                        </div>
-                        <div *ngIf="ques_data[index].option3!=null">
-                            <li class="list-group-item"><input type="radio" formControlName="Option" value=2>&emsp;{{ques_data[index].option3}}</li>
-                        </div>
-                        <div *ngIf="ques_data[index].option4!=null">
-                            <li class="list-group-item"><input type="radio" formControlName="Option" value=3>&emsp;{{ques_data[index].option4}}</li>
-                        </div>
+                        <li *ngIf="ques_data[index].option1!=null" class="list-group-item">
+                            <input type="radio" formControlName="Option" value=0 id="00">
+                            <label for="00">&emsp;{{ques_data[index].option1}}</label>
+                        </li>
+                        <li *ngIf="ques_data[index].option2!=null" class="list-group-item">
+                            <input type="radio" formControlName="Option" value=1 id="01">
+                            <label for="01">&emsp;{{ques_data[index].option2}}</label>
+                        </li>
+                        <li *ngIf="ques_data[index].option3!=null" class="list-group-item">
+                            <input type="radio" formControlName="Option" value=2 id="02">
+                            <label for="02">&emsp;{{ques_data[index].option3}}</label>
+                        </li>
+                        <li *ngIf="ques_data[index].option4!=null" class="list-group-item">
+                            <input type="radio" formControlName="Option" value=3 id="03">
+                            <label for="03">&emsp;{{ques_data[index].option4}}</label>
+                        </li>
                     </form>
                 </ul>
                 <div class="card-body content">

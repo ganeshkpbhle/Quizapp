@@ -24,6 +24,7 @@ ul li {
     background-color: transparent;
     margin: 0 auto;
     border: none;
+    font-size: 20px;
 }
 
 ul li:hover {
@@ -44,6 +45,10 @@ ul li:hover {
     text-decoration: none;
 }
 
+.card-text {
+    font-size: large;
+}
+
 img {
     min-height: max-content;
 }
@@ -54,5 +59,20 @@ img {
     justify-self: right;
     padding: 8px;
     background-color: thistle;
-    font-size: 20px;
+    font-size: 25px;
 }
+
+input[type=radio] {
+    height: 2vh;
+    width: 2vh;
+}
+
+label {
+    padding: 5px;
+    cursor: pointer;
+    z-index: 90;
+}
+
+
+/* input[type="radio"]:checked+label,
+.Checked+label {} */
