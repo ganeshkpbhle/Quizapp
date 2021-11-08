@@ -1,0 +1,15 @@
+<div class="container mt-5 shadow p-3 mb-5 rounded" id="backg">
+    <div class="row mt-0" id="head">
+        <ol>
+            <li [ngClass]="{'rem':!reg,'set':reg,'col-xl-6':true}" routerLink="register">Register</li>
+            <li [ngClass]="{'set':!reg,'rem':reg,'col-xl-6':true}" routerLink="login">Login</li>
+        </ol>
+    </div>
+    <div class="row ">
+        <div class="col-xl-12 col-lg-12 col-sm-12 col-xs-12">
+            <div class="p-2 bd-highlight ">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

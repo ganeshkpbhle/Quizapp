@@ -1,0 +1,52 @@
+.text1 {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 37px;
+}
+
+.text2 {
+    text-align: center;
+    color: rgb(46, 44, 44);
+    font-size: 15px;
+    padding: 2px;
+    font-family: 'Noto Sans Mono', monospace;
+}
+
+.has-error {
+    border-color: red;
+}
+
+.has-success {
+    border-color: green;
+}
+
+.text3 {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    font-size: 20px;
+}
+
+.bg-col {
+    background-color: gray;
+}
+
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+input:focus {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+::placeholder {
+    color: black;
+}
+
+.custom-img {
+    max-width: 100px;
+    margin: 0 auto;
+}

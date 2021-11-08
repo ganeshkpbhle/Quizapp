@@ -1,0 +1,16 @@
+.backg {
+    background-color: transparent;
+}
+
+.content {
+    background-color: tomato;
+}
+
+.content:hover {
+    background-color: violet;
+}
+
+.custom-img {
+    max-width: 200px;
+    max-height: 200px;
+}

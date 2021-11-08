@@ -1,0 +1,58 @@
+<div class="container mt-4">
+    <div class="row justify-content-center shadow p-3 mb-3 rounded backg">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="row justify-content-center">
+                <div class="col-xl-12 col-lg-12 col-sm-12">
+                    <p class="text1">Log in to check your attempts and Score</p>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-xl-12 d-flex flex-row justify-content-center">
+                    <img src="assets/img/single_user.png" class="img-fluid" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-sm-12">
+                    <input placeholder="Email" [ngClass]="{
+                        'has-error':form.controls.Email.touched && (form.controls.Email.invalid||form.value.Email.length==0),
+                        'has-success':form.controls.Email.touched && form.controls.Email.valid && form.value.Email.length>0}" type="email" name="Email" formControlName="Email" class="form-control">
+                    <span style="color:red;" *ngIf="form.controls.Email.touched &&(form.controls.Email.invalid||form.value.Email.length==0)">Enter
+                        valid email
+                    </span>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-xl-12 col-lg-12 col-sm-12">
+                    <input placeholder="Password" [ngClass]="{
+                        'has-error':form.controls.Passwd.touched && form.controls.Passwd.invalid,
+                        'has-success':form.controls.Passwd.touched && form.controls.Passwd.valid}" type="password" name="Passwd" formControlName="Passwd" class="form-control">
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-xl-12 col-lg-12 col-sm-12 d-flex flex-row justify-content-center">
+                    <button class="btn btn-primary" [disabled]="!(form.controls.Email.valid && form.value.Email.length>0 && form.controls.Passwd.valid)">Login</button>
+                    <span style="color:red;" *ngIf="fcred">Invalid MailId or Password
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- <div class="row justify-content-center">
+        <div class="col-xl-12">
+            <p class="Or">OR</p>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="d-flex flex-row bd-highlight mb-3 custom-flx-1 p-3 mb-5 bg-white rounded">
+            <div class="col-xl-4 p-2 bd-highlight">
+                <button class="btn btn-primary"><i class="fab fa-google"></i> Google </button>
+            </div>
+            <div class="col-xl-4 p-2 bd-highlight">
+                <button class="btn btn-primary"><i class="fab fa-twitter-square"></i> Twitter </button>
+            </div>
+            <div class="col-xl-4 p-2 bd-highlight">
+                <button class="btn btn-primary"><i class="fab fa-apple"></i> Apple </button>
+            </div>
+        </div>
+    </div> -->
+</div>

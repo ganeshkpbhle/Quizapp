@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row my-3" *ngIf="(counter.length>0) && counter!==''">
+        <div class="col-xl-12 col-lg-12 col-sm-12 col-md-12">
+            <div class="card counter">
+                <span>Time Left : {{counter}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-sm-12 col-md-12 d-flex flex-row justify-content-center">
+            <div class="card w-75 p-3">
+                <div *ngIf="ques_data[index].imageName!=null">
+                    {{rootUrl+ques_data[index].imageName}}
+                    <img class="card-img-top p-5 custom-img" [src]="rootUrl+ques_data[index].imageName" alt="Card image cap">
+                </div>
+                <div class="card-body custom-img">
+                    <p class="card-text">{{ques_data[index].qn}}</p>
+                </div>
+                <ul class="list-group">
+                    <form [formGroup]="form">
+                        <div *ngIf="ques_data[index].option1!=null">
+                            <li class="list-group-item"><input type="radio" formControlName="Option" value=0>&emsp;{{ques_data[index].option1}}</li>
+                        </div>
+                        <div *ngIf="ques_data[index].option2!=null">
+                            <li class="list-group-item"><input type="radio" formControlName="Option" value=1>&emsp;{{ques_data[index].option2}}</li>
+                        </div>
+                        <div *ngIf="ques_data[index].option3!=null">
+                            <li class="list-group-item"><input type="radio" formControlName="Option" value=2>&emsp;{{ques_data[index].option3}}</li>
+                        </div>
+                        <div *ngIf="ques_data[index].option4!=null">
+                            <li class="list-group-item"><input type="radio" formControlName="Option" value=3>&emsp;{{ques_data[index].option4}}</li>
+                        </div>
+                    </form>
+                </ul>
+                <div class="card-body content">
+                    <button class="btn btn-secondary mx-2" (click)="previousQues()" [disabled]="(index===0)">Previous</button>
+                    <button class="btn btn-secondary mx-2" (click)="nextQues()" [disabled]="(index==ques_data.length-1)">Save & Next</button>
+                    <button class="btn btn-danger mx-2" [disabled]="!(index>=ques_data.length-1)" (click)="Submit()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+.text1 {
+    font-size: 20px;
+    text-align: center;
+}
+
+.has-error {
+    border-color: red;
+}
+
+.has-success {
+    border-color: green;
+}
+
+.fa-user {
+    color: dodgerblue;
+}
+
+p {
+    text-align: center;
+}
+
+.backg {
+    background-color: gray;
+}
+
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+input:focus {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+::placeholder {
+    color: black;
+}

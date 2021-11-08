@@ -1,0 +1,18 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card text-center">
+                <div class="card-header">
+                    Profile
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Email : {{profdata.uEmail}}</li>
+                    <li class="list-group-item">Mobile Number : {{profdata.mobnumber}}</li>
+                    <li class="list-group-item">User ID : {{profdata.uId}}</li>
+                    <li class="list-group-item" *ngIf="maxScore>0">Max Score : {{maxScore}}</li>
+                </ul>
+                <a [routerLink]="['/user',userId]" class="btn btn-primary">Back</a>
+            </div>
+        </div>
+    </div>
+</div>

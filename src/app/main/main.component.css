@@ -1,0 +1,50 @@
+@media only screen and (min-width:800px) {
+    .container {
+        min-width: 500px;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    .container {
+        min-width: 400px;
+    }
+}
+
+.container ol {
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+}
+
+.container ol li {
+    float: left;
+    padding: 10px;
+    text-align: center;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+.container ol li:hover {
+    border-bottom: 2px solid rgb(40, 117, 189);
+}
+
+.set {
+    color: rgb(151, 231, 215);
+}
+
+.rem {
+    color: white;
+}
+
+#head {
+    color: azure;
+}
+
+#backg {
+    background-color: rgb(138, 150, 172);
+    width: max-content;
+}
+
+#backg1 {
+    background-color: white;
+}

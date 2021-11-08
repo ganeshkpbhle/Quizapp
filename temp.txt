@@ -1,0 +1,24 @@
+<div class="p-2 bd-highlight">
+                        <p class="text3">Let's get in touch</p>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <input placeholder="Email" [ngClass]="{
+                        'has-error':form.controls.Email.touched && form.controls.Email.invalid,
+                        'has-success':form.controls.Email.touched && form.controls.Email.valid}" type="email" name="Email" formControlName="Email" class="form-control">
+                        <span style="color:red;" *ngIf="form.controls.Email.touched && form.controls.Email.invalid">Enter
+                            valid email
+                        </span>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <input placeholder="Password" [ngClass]="{
+                            'has-error':form.controls.Passwd.touched && form.controls.Passwd.invalid,
+                            'has-success':form.controls.Passwd.touched && form.controls.Passwd.valid}" type="password" name="Passwd" formControlName="Passwd" class="form-control">
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <input placeholder="Confirm-password" [ngClass]="{
+                            'has-error':form.controls.Passwd.touched && form.controls.Passwd.invalid,
+                            'has-success':form.controls.Passwd.touched && form.controls.Passwd.valid}" type="password" name="Passwd" formControlName="Passwd" class="form-control">
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>

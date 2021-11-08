@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row justify-content-center mt-3 shadow p-3 mb-5 bg-col rounded">
+        <div class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-xs-12">
+            <div class="d-flex flex-column bd-highlight">
+                <form [formGroup]="form" (ngSubmit)="submit()">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                            <p class="text3">Register to attend</p>
+                        </div>
+                    </div>
+                    <div class="row mt-2 mb-4">
+                        <img src="assets/img/logo.png" class="img-fluid custom-img" alt="">
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                            <input placeholder="Email" [ngClass]="{
+                                'has-error':form.controls.Email.touched &&(form.controls.Email.invalid||form.value.Email.length===0),
+                                'has-success':form.controls.Email.touched && form.controls.Email.valid&&form.value.Email.length>0}" type="email" formControlName="Email" class="form-control" (input)="err=''">
+                            <span style="color:red;" *ngIf="(form.controls.Email.touched && (form.controls.Email.invalid||form.value.Email.length==0))||err.length>0">Enter
+                                valid email
+                            </span>
+                            <span style="color:red;" *ngIf="err.length>0">{{err}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                            <input placeholder="MobileNumber" [ngClass]="{
+                                'has-error':form.controls.Mob.touched && form.controls.Mob.invalid,
+                                'has-success':form.controls.Mob.touched && form.controls.Mob.valid && form.value.Mob.length>0}" formControlName="Mob" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                            <input placeholder="New Password" [ngClass]="{
+                                    'has-error':form.controls.Passwd.touched && form.controls.Passwd.invalid,
+                                    'has-success':form.controls.Passwd.touched && form.controls.Passwd.valid}" type="password" name="Passwd" formControlName="Passwd" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                            <input placeholder="Confirm Password" [ngClass]="{
+                                'has-error':(form.controls.Cfpasswd.touched && form.controls.Cfpasswd.invalid)||(!passwd && form.value.Cfpasswd.length>0),
+                                'has-success':form.controls.Cfpasswd.touched && form.controls.Cfpasswd.valid}" type="password" formControlName="Cfpasswd" class="form-control" (input)="passCheck()">
+                            <span style="color:red;" *ngIf="!passwd && form.value.Cfpasswd.length>0">Password should Match
+                                </span>
+                        </div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-xl-12 col-lg-12 col-sm-12 col-md-12 col-xs-12 d-flex flex-row justify-content-center">
+                            <button type="submit" class="btn btn-primary" [disabled]="!(err.length===0 && form.controls.Email.valid && form.value.Email.length>0 && form.controls.Passwd.valid && form.controls.Cfpasswd.valid && form.controls.Mob.valid)">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

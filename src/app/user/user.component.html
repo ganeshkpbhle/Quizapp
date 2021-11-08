@@ -1,0 +1,25 @@
+<app-topbar [Id]="userId" [mail]="userMail" (logOut)="logout()"></app-topbar>
+<div class="container-fluid">
+    <div class="row my-5" *ngIf="Isnot">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex flex-row justify-content-center">
+            <button class="btn btn-primary content" (click)="startQuiz()">StartQuiz</button>
+        </div>
+    </div>
+    <div *ngFor="let item of attemptsProf">
+        <div class="row my-5" *ngIf="item.score!==null && Isnot">
+            <div class="card text-center">
+                <div class="card-header">
+                    Attempt : {{getDate(item.date)}}&emsp;TimeSpent : {{item.timeSpent}} Seconds
+                </div>
+                <div class="card-body">
+                    <div *ngIf="item.score>10; else elseBlock"><img src="assets/img/trophy.png" class="img-fluid custom-img" alt=""></div>
+                    <ng-template #elseBlock>You didn't pass</ng-template>
+                    <h5 class="card-title">Scored : {{item.score}}/{{questions.length}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2" *ngIf="!Isnot">
+        <app-ques [ques_data]="questions" (trigger)="testFinish($event)"></app-ques>
+    </div>
+</div>
